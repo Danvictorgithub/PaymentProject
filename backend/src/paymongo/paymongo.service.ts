@@ -33,7 +33,6 @@ export class PaymongoService implements OnModuleInit{
                 }
             }
         }
-        console.log(btoa(`${process.env.PayMongo_Secret_Key}:`));
         const result = await axios.post("https://api.paymongo.com/v1/checkout_sessions",JSON.stringify(attributes),{
             auth:{username: process.env.PayMongo_Secret_Key,password:''},
             headers: {
